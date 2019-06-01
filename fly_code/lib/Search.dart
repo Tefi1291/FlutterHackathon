@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'api_client.dart';
 import 'package:fly_code/models/faqs.dart';
 
+import 'searchDetail.dart';
+
 class SearchPage extends StatelessWidget
 {
   final String query;
@@ -19,16 +21,24 @@ class SearchPage extends StatelessWidget
               return Text("NO DATA");
             list = snapshot.data;
             return ListView.builder(itemBuilder: (context, index) =>
-                ConstrainedBox(
-                  constraints: BoxConstraints(
-                      minHeight: 20.0
+                Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white12.withOpacity(0.5),
+                    border: Border(
+                      bottom: BorderSide(color: Colors.black, width: 0.25),
+                    ),
                   ),
-                  child: Column(
-                    children: <Widget>[
-                      Text(list[index].title)
-                    ],
+                  height: 75.0,
+                  child: ListTile(
+                    title: Center(
+                      child: Text(list[index].title),
+                    ),
+                    onTap: () => Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SearchDetail()),
+                    ),
                   ),
-                )
+                ),
+              itemCount: list.length
             );
           })
     );
