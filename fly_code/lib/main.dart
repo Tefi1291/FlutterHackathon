@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fly_code/searchForm.dart';
+import 'package:fly_code/Search.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,6 +23,12 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.deepOrange,
       ),
+
+      /// aca definimos las rutas de nuestra app
+      /// para referenciarlas por nombre
+      routes: <String, WidgetBuilder>{
+        '/search': (BuildContext context) => SearchPage(''),
+      },
       home: HomePage(title: 'FlyCode'),
     );
   }
@@ -37,6 +45,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text(this.title)),
       body: Container(
+
         padding: EdgeInsets.all(15.0),
         child: Center(
           child: Column(
@@ -45,32 +54,16 @@ class HomePage extends StatelessWidget {
                 "Search",
                 textAlign: TextAlign.center,
               ),
-              Row(
-                children: <Widget>[
-                  // aca agregamos el search widget
-                ],
-              ),
+
+              Container(
+                  //width: 400,
+                  height: 500,
+                  color: Colors.red,
+                  child: SearchForm()),
             ],
           ),
         ),
       ),
     );
-  }
-}
-
-class SearchForm extends StatefulWidget
-{
-
-  _SearchForm createState()=> _SearchForm();
-
-}
-
-class _SearchForm extends State<SearchForm>
-{
-
-  @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return null;
   }
 }
