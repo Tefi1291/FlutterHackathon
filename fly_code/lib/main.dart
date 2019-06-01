@@ -54,12 +54,7 @@ class HomePage extends StatelessWidget {
                 "Search",
                 textAlign: TextAlign.center,
               ),
-
-              Container(
-                  //width: 400,
-                  height: 500,
-                  color: Colors.red,
-                  child: SearchForm()),
+              SearchForm()
             ],
           ),
         ),
