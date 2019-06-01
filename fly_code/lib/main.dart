@@ -39,16 +39,38 @@ class HomePage extends StatelessWidget {
       body: Container(
         padding: EdgeInsets.all(15.0),
         child: Center(
-          child: Row(
+          child: Column(
             children: <Widget>[
               Text(
                 "Search",
                 textAlign: TextAlign.center,
+              ),
+              Row(
+                children: <Widget>[
+                  // aca agregamos el search widget
+                ],
               ),
             ],
           ),
         ),
       ),
     );
+  }
+}
+
+class SearchForm extends StatefulWidget
+{
+
+  _SearchForm createState()=> _SearchForm();
+
+}
+
+class _SearchForm extends State<SearchForm>
+{
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return null;
   }
 }
