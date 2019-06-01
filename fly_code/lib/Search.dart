@@ -13,12 +13,15 @@ class SearchPage extends StatelessWidget
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("FlyCode"),
+      ),
       body: FutureBuilder(
           future: getFaqs(),
           builder: (context, snapshot) {
             List<Faqs> list = [];
             if(!snapshot.hasData)
-              return Text("NO DATA");
+              return Center(child: Text("NO DATA"),);
             list = snapshot.data;
             return ListView.builder(itemBuilder: (context, index) =>
                 Container(
