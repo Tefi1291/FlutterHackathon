@@ -38,7 +38,7 @@ class SearchPage extends StatelessWidget
                       child: Text(list[index].title),
                     ),
                     onTap: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => SearchDetail()),
+                      MaterialPageRoute(builder: (context) => SearchDetail(list[index].questionId)),
                     ),
                   ),
                 ),

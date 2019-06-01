@@ -44,20 +44,33 @@ class HomePage extends StatelessWidget {
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(title: Text(this.title)),
-      body: Container(
-
+      body: ListView(
         padding: EdgeInsets.all(15.0),
-        child: Center(
-          child: Column(
-            children: <Widget>[
-              Text(
-                "Search",
-                textAlign: TextAlign.center,
-              ),
-              SearchForm()
-            ],
+        children: <Widget>[
+          Center(
+            child: Column(
+              children: <Widget>[
+                Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        child: Center(child: Image.asset('flycode.jpg', fit: BoxFit.fill,)),
+                        margin: EdgeInsets.symmetric(vertical: 60.0),
+                        width: 280.0,
+                      ),
+                    ),
+                  ],
+                ),
+                Text(
+                  "Search",
+                  textAlign: TextAlign.center,
+                ),
+                SearchForm()
+              ],
+            ),
           ),
-        ),
+        ],
       ),
     );
   }
