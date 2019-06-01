@@ -23,6 +23,7 @@ class SearchPage extends StatelessWidget
             if(!snapshot.hasData)
               return Center(child: Text("NO DATA"),);
             list = snapshot.data;
+            list= FilterElems(list);
             return ListView.builder(itemBuilder: (context, index) =>
                 Container(
                   decoration: BoxDecoration(
@@ -47,4 +48,8 @@ class SearchPage extends StatelessWidget
     );
   }
 
+  List<Faqs> FilterElems(List<Faqs> list)
+  {
+    return list.where( (e) => e.title.contains(this.query)).toList();
+  }
 }
