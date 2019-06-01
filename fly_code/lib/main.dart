@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.blue,
       ),
 
       /// aca definimos las rutas de nuestra app
@@ -53,11 +53,11 @@ class HomePage extends StatelessWidget {
                 Column(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(5.0),
                       child: Container(
                         child: Center(child: Image.asset('flycode.jpg', fit: BoxFit.fill,)),
                         margin: EdgeInsets.symmetric(vertical: 60.0),
-                        width: 280.0,
+                        width: 150.0,
                       ),
                     ),
                   ],

@@ -31,20 +31,23 @@ class _SearchForm extends State<SearchForm> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 16.0),
-                child: RaisedButton(
-                  onPressed: () {
-                    // Validate will return true if the form is valid, or false if
-                    // the form is invalid.
-                    if (_formKey.currentState.validate()) {
-                      // Process data.
-                      print("ot tap");
-                      Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SearchPage(_query)),
-                      );
-                    }
-                  },
-                  child: Text('Buscar!'),
-                ),
+                child: Center(
+                  child: RaisedButton(
+                    color: Colors.blue,
+                    onPressed: () {
+                      // Validate will return true if the form is valid, or false if
+                      // the form is invalid.
+                      if (_formKey.currentState.validate()) {
+                        // Process data.
+                        print("ot tap");
+                        Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => SearchPage(_query)),
+                        );
+                      }
+                    },
+                    child: Text('Buscar!'),
+                  ),
+                )
               ),
             ]));
   }
