@@ -50,18 +50,18 @@ class HomePage extends StatelessWidget {
           Center(
             child: Column(
               children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Container(
-                        child: Center(child: Image.asset('flycode.jpg', fit: BoxFit.fill,)),
-                        margin: EdgeInsets.symmetric(vertical: 60.0),
-                        width: 280.0,
-                      ),
-                    ),
-                  ],
-                ),
+//                Column(
+//                  children: <Widget>[
+//                    Padding(
+//                      padding: const EdgeInsets.all(8.0),
+//                      child: Container(
+//                        child: Center(child: Image.asset('flycode.jpg', fit: BoxFit.fill,)),
+//                        margin: EdgeInsets.symmetric(vertical: 60.0),
+//                        width: 280.0,
+//                      ),
+//                    ),
+//                  ],
+//                ),
                 Text(
                   "Search",
                   textAlign: TextAlign.center,

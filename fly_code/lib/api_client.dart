@@ -10,9 +10,11 @@ Future<List<Faqs>> getFaqs() async{
   final response = await http.get('https://api.stackexchange.com/2.2/tags/flutter/faq?site=stackoverflow', headers: {"Accept": "application/json"});
   if(response.statusCode == 200) {
     var data = json.decode(response.body);
+    print(data);
     for (var elem in data["items"]) {
       faqs.add(Faqs.fromJson(elem));
     }
+    print(faqs);
     return faqs;
   } else {
     throw Exception('Failed to load data');

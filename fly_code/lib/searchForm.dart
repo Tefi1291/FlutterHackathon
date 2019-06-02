@@ -37,7 +37,7 @@ class _SearchForm extends State<SearchForm> {
                     // the form is invalid.
                     if (_formKey.currentState.validate()) {
                       // Process data.
-                      print("ot tap");
+
                       Navigator.push(context,
                         MaterialPageRoute(builder: (context) => SearchPage(_query)),
                       );

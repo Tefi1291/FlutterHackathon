@@ -6,6 +6,6 @@ class Faqs {
 
   Faqs.fromJson(Map json){
     this.title = json["title"];
-    this.questionId = json["question_id"];
+    //this.questionId = json["question_id"];
   }
 }
