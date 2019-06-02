@@ -36,6 +36,7 @@ class MyApp extends StatelessWidget {
 
 class HomePage extends StatelessWidget {
   final String title;
+  final String searchTextHeader = "Type your query about flutter:";
 
   HomePage({Key key, this.title}) : super(key: key);
 
@@ -49,22 +50,23 @@ class HomePage extends StatelessWidget {
         children: <Widget>[
           Center(
             child: Column(
+              //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
 //                Column(
 //                  children: <Widget>[
 //                    Padding(
 //                      padding: const EdgeInsets.all(8.0),
 //                      child: Container(
-//                        child: Center(child: Image.asset('flycode.jpg', fit: BoxFit.fill,)),
+//                        child: Center(child: Image.asset('assets/flycode.jpg', fit: BoxFit.fill,)),
 //                        margin: EdgeInsets.symmetric(vertical: 60.0),
-//                        width: 280.0,
+//                        width: 28.0,
 //                      ),
 //                    ),
 //                  ],
 //                ),
                 Text(
-                  "Search",
-                  textAlign: TextAlign.center,
+                  this.searchTextHeader,
+                  textAlign: TextAlign.end,
                 ),
                 SearchForm()
               ],

@@ -17,20 +17,21 @@ class _SearchForm extends State<SearchForm> {
     // TODO: implement build
     return Form(
         key: _formKey,
-        child: Column(
-
-            crossAxisAlignment: CrossAxisAlignment.start,
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              TextFormField(
-                validator: (value) {
-                  if (value.isEmpty) {
-                    return 'ingrese texto a buscar';
-                  }
-                  _query = value;
-                },
+              new Flexible(
+                child: TextFormField(
+                  validator: (_query) {
+                    if (_query.isEmpty) {
+                      return 'ingrese texto a buscar';
+                    }
+                    //_query = value;
+                  },
+                ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                padding: EdgeInsets.symmetric(horizontal: 15),
                 child: RaisedButton(
                   onPressed: () {
                     // Validate will return true if the form is valid, or false if
@@ -38,8 +39,10 @@ class _SearchForm extends State<SearchForm> {
                     if (_formKey.currentState.validate()) {
                       // Process data.
 
-                      Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SearchPage(_query)),
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SearchPage(_query)),
                       );
                     }
                   },
