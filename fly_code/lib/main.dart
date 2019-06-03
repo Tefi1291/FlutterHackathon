@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.deepOrange,
+        primarySwatch: Colors.blue,
       ),
 
       /// aca definimos las rutas de nuestra app
@@ -64,6 +64,7 @@ class HomePage extends StatelessWidget {
 //                    ),
 //                  ],
 //                ),
+
                 Text(
                   this.searchTextHeader,
                   textAlign: TextAlign.end,
