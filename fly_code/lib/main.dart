@@ -67,6 +67,7 @@ class HomePage extends StatelessWidget {
                 Text(
                   this.searchTextHeader,
                   textAlign: TextAlign.end,
+                  style: Theme.of(context).textTheme.title,
                 ),
                 SearchForm()
               ],

@@ -22,11 +22,11 @@ class _SearchForm extends State<SearchForm> {
             children: <Widget>[
               new Flexible(
                 child: TextFormField(
-                  validator: (_query) {
-                    if (_query.isEmpty) {
+                  validator: (value) {
+                    if (value.isEmpty) {
                       return 'ingrese texto a buscar';
                     }
-                    //_query = value;
+                    _query = value;
                   },
                 ),
               ),

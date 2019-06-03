@@ -12,9 +12,10 @@ class SearchPage extends StatelessWidget
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        title: Text("FlyCode"),
+        title: Text("Searching $query",),
       ),
       body: FutureBuilder(
           future: getFaqs(),
@@ -23,7 +24,7 @@ class SearchPage extends StatelessWidget
             if(!snapshot.hasData)
               return Center(child: Text("NO DATA"),);
             list = snapshot.data;
-            list= FilterElems(list);
+            list= filterElems(list);
             return ListView.builder(itemBuilder: (context, index) =>
                 Container(
                   decoration: BoxDecoration(
@@ -48,8 +49,9 @@ class SearchPage extends StatelessWidget
     );
   }
 
-  List<Faqs> FilterElems(List<Faqs> list)
+  List<Faqs> filterElems(List<Faqs> list)
   {
-    return list.where( (e) => e.title.contains(this.query)).toList();
+    var toLower = this.query.toLowerCase();
+    return list.where( (e) => e.title.toLowerCase().contains(toLower)).toList();
   }
 }
