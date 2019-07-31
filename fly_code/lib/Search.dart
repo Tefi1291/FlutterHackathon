@@ -18,13 +18,12 @@ class SearchPage extends StatelessWidget
         title: Text("Searching $query",),
       ),
       body: FutureBuilder(
-          future: getFaqs(),
+          future: getFaqs(query),
           builder: (context, snapshot) {
             List<Faqs> list = [];
             if(!snapshot.hasData)
               return Center(child: Text("NO DATA"),);
             list = snapshot.data;
-            list= filterElems(list);
             return ListView.builder(itemBuilder: (context, index) =>
                 Container(
                   decoration: BoxDecoration(
@@ -47,11 +46,5 @@ class SearchPage extends StatelessWidget
             );
           })
     );
-  }
-
-  List<Faqs> filterElems(List<Faqs> list)
-  {
-    var toLower = this.query.toLowerCase();
-    return list.where( (e) => e.title.toLowerCase().contains(toLower)).toList();
   }
 }
