@@ -52,19 +52,17 @@ class HomePage extends StatelessWidget {
             child: Column(
               //crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-//                Column(
-//                  children: <Widget>[
-//                    Padding(
-//                      padding: const EdgeInsets.all(8.0),
-//                      child: Container(
-//                        child: Center(child: Image.asset('assets/flycode.jpg', fit: BoxFit.fill,)),
-//                        margin: EdgeInsets.symmetric(vertical: 60.0),
-//                        width: 28.0,
-//                      ),
-//                    ),
-//                  ],
-//                ),
-
+                Padding(
+                  padding: EdgeInsets.symmetric(vertical: 25),
+                  child: Hero(
+                    tag: 'fly code',
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/flycode.jpg'),
+                      backgroundColor: Colors.transparent,
+                      radius: 72,
+                    ),
+                  ),
+                ),
                 Text(
                   this.searchTextHeader,
                   textAlign: TextAlign.end,
