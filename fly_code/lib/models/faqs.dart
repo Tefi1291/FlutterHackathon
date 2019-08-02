@@ -1,15 +1,18 @@
 import 'owner.dart';
 
 class Faqs {
+  int questionId;
   String title;
   Owner owner;
-  String questionId;
   int answerCount;
+  int score;
 
 
   Faqs.fromJson(Map json){
+    this.questionId = json["question_id"];
     this.title = json["title"];
-    this.answerCount = json["answer_count"];
     this.owner = Owner.fromJson(json["owner"]);
+    this.answerCount = json["answer_count"];
+    this.score = json["score"];
   }
 }
