@@ -6,6 +6,7 @@ class Faqs {
   Owner owner;
   int answerCount;
   int score;
+  String body;
 
 
   Faqs.fromJson(Map json){
@@ -14,5 +15,6 @@ class Faqs {
     this.owner = Owner.fromJson(json["owner"]);
     this.answerCount = json["answer_count"];
     this.score = json["score"];
+    this.body = json["body"];
   }
 }

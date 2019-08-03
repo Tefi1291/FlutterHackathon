@@ -101,7 +101,7 @@ class _QuestionWidget extends StatelessWidget {
         ),
       ),
       onTap: () => Navigator.push(context,
-        MaterialPageRoute(builder: (context) => SearchDetail(faqs.questionId.toString())),
+        MaterialPageRoute(builder: (context) => SearchDetail(faqs)),
       )
     );
   }

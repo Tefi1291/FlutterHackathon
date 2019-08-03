@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_html_view/flutter_html_view.dart';
+
+import 'models/faqs.dart';
+
 class SearchDetail extends StatelessWidget
 {
 
-  String questionId;
+  final Faqs question;
   ///Esta pagina va a mostrar detalles de una consulta en particular
   ///seleccionada en Search
-  SearchDetail(this.questionId);
+  SearchDetail(this.question);
 
 
   @override
@@ -17,7 +21,10 @@ class SearchDetail extends StatelessWidget
         title: Text("FlyCode"),
       ),
       body: Container(
-        child: Text("responses"),
+        child: HtmlView(
+          data: this.question.body,
+          stylingOptions: null,
+        ),
       ),
     );
   }
