@@ -13,6 +13,13 @@ class SearchDetail extends StatelessWidget
   SearchDetail(this.question);
 
 
+  IconData getVotesIcon() {
+    if (this.question.score >= 0)
+      return Icons.thumb_up;
+    else
+      return Icons.thumb_down;
+  }
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -25,48 +32,55 @@ class SearchDetail extends StatelessWidget
           children: <Widget>[
             Container(
               padding: EdgeInsets.all(10),
-              child: Column(
+              child: Row(
                 children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(this.question.owner.image),
-                        backgroundColor: Colors.transparent,
-                        radius: 20,
-                      ),
-                      Container(
-                        width: 100,
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
+                  Container(
+                    width: 80,
+                    padding: EdgeInsets.symmetric(horizontal: 2),
+                    child: Column(
+                      children: <Widget>[
+                        Text("Votes:"),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text("Votes:"),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Icon(Icons.thumb_up),
-                                Text(this.question.score.toString())
-                              ],
+                            Icon(this.getVotesIcon(), size: 40,),
+                            Text(this.question.score.toString(), style: TextStyle(
+                              fontSize: 30
+                            ),)
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          children: <Widget>[
+                            CircleAvatar(
+                              backgroundImage: NetworkImage(this.question.owner.image),
+                              backgroundColor: Colors.transparent,
+                              radius: 20,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.all(5),
+                              child: Column(
+                                children: <Widget>[
+                                  Text(this.question.owner.name),
+                                  Text("Reputation: ${this.question.owner.reputation}"),
+                                ],
+                              ),
                             )
                           ],
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         ),
-                      ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsets.all(5),
-                          child: Column(
-                            children: <Widget>[
-                              Text(this.question.owner.name),
-                              Text("Reputation: ${this.question.owner.reputation}"),
-                            ],
-                          ),
-                        )
-                      )
-                    ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    child: Text(this.question.title),
-                  ),
+                        Container(
+                          padding: EdgeInsets.all(10),
+                          child: Text(this.question.title),
+                        ),
+                      ],
+                    ),
+                  )
                 ],
               ),
               color: Colors.lightBlueAccent,
@@ -76,7 +90,7 @@ class SearchDetail extends StatelessWidget
                 data: this.question.body,
                 stylingOptions: null,
               ),
-            )
+            ),
           ],
         )
     ),
