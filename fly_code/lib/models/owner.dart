@@ -7,5 +7,7 @@ class Owner {
     this.name = json["display_name"];
     this.reputation = json["reputation"];
     this.image = json["profile_image"];
+    if(this.image == null)
+      this.image = "";
   }
 }

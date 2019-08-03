@@ -34,7 +34,7 @@ class SearchPage extends StatelessWidget
 }
 
 class _QuestionWidget extends StatelessWidget {
-  Faqs faqs;
+  final Faqs faqs;
 
   _QuestionWidget(this.faqs);
 
@@ -47,60 +47,55 @@ class _QuestionWidget extends StatelessWidget {
           padding: EdgeInsets.all(5),
           child: Row(
             children: <Widget>[
-              Expanded(
-                flex: 1,
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: CircleAvatar(
-                    backgroundImage: NetworkImage(this.faqs.owner.image),
-                    backgroundColor: Colors.transparent,
-                    radius: 20,
-                  ),
-                ),
+              CircleAvatar(
+                backgroundImage: NetworkImage(this.faqs.owner.image),
+                backgroundColor: Colors.transparent,
+                minRadius: 20,
+                maxRadius: 30,
               ),
               Expanded(
-                  flex: 6,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
-                        margin: EdgeInsets.only(bottom: 5),
-                        child: Text(this.faqs.title, style: TextStyle(
-                            fontWeight: FontWeight.w500
-                        ),),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Text("Score", style: TextStyle(color: Colors.grey),),
-                              Row(
-                                children: <Widget>[
-                                  Icon(Icons.score, color: Colors.grey,),
-                                  Text(faqs.score.toString(), style: TextStyle(color: Colors.grey),),
-                                ],
-                              )
-                            ],
-                          ),
-                          Padding(padding: EdgeInsets.all(10)),
-                          Column(
-                            children: <Widget>[
-                              Text("Answers", style: TextStyle(color: Colors.grey),),
-                              Row(
-                                children: <Widget>[
-                                  Icon(Icons.question_answer, color: Colors.grey,),
-                                  Text(faqs.answerCount.toString(), style: TextStyle(color: Colors.grey),),
-                                ],
-                              )
-                            ],
-                          ),
-                        ],
-                      )
-                    ],
-                  )),
+                flex: 6,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                      margin: EdgeInsets.only(bottom: 5),
+                      child: Text(this.faqs.title, style: TextStyle(
+                          fontWeight: FontWeight.w500
+                      ),),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Text("Score", style: TextStyle(color: Colors.grey),),
+                            Row(
+                              children: <Widget>[
+                                Icon(Icons.score, color: Colors.grey,),
+                                Text(faqs.score.toString(), style: TextStyle(color: Colors.grey),),
+                              ],
+                            )
+                          ],
+                        ),
+                        Padding(padding: EdgeInsets.all(10)),
+                        Column(
+                          children: <Widget>[
+                            Text("Answers", style: TextStyle(color: Colors.grey),),
+                            Row(
+                              children: <Widget>[
+                                Icon(Icons.question_answer, color: Colors.grey,),
+                                Text(faqs.answerCount.toString(), style: TextStyle(color: Colors.grey),),
+                              ],
+                            )
+                          ],
+                        ),
+                      ],
+                    )
+                  ],
+                )),
             ],
           ),
         ),
